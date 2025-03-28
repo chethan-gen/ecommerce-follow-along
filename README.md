@@ -63,3 +63,23 @@ Completed foundation for your E-Commerce Application.
 * Created the ProductRouter page in Backend.
 * Created ProductModel in backend.
 * Handle file uploads by multer inside middleware multer.
+
+# Milestone 11: 
+* Created Homepage For Product
+* Created Home Page for dynamic products presentation. 
+* added the backend part for handeling products (created endpoint to get products).
+
+# Milestone 12: 
+* Showing product according to user
+* Created Product Page for dynamic products presentation according to user mail.
+* Created backend for specific user products.
+
+# Milestone 13: 
+* Created Product Update
+* Created Product Update Endpoint for Updating products. 
+* Created form for updating data in frontend and created autofill function.
+
+# Milestone 14: 
+* Created Product Delete
+* Created Product Delete Endpoint for Updating products.
+* Created form for Deleting product in frontend.

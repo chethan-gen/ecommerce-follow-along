@@ -2,18 +2,17 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
-
 }
 
 .navbar > div:nth-child(2){
     display: flex;
     justify-content: space-between;
     width: 25%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .navbar > div:nth-child(2) div{
-    color: rgb(205, 238, 149);
+    color: blue;
     text-decoration: solid;
     font-weight: 500;
 }
@@ -27,7 +26,7 @@
 }
 
 .navbar h1{
-    color: rgb(142, 240, 198);
+    color: navy;
     font-style: italic;
     font-size: xx-large;
     font-weight: 600;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import "./Login.css"
-
+import styles from "./login.module.css";
+import axios from 'axios';
 const Login = () => {
     const[loginData,setLoginData] = useState({
         email:"",
@@ -8,33 +8,44 @@ const Login = () => {
     })
 
     function handleInput(e){
-        setLoginData({...loginData,[e.target.name]:e.target.name})
+        setLoginData({...loginData,[e.target.name]:e.target.value})
     }
 
 
-    function handleLogin(event){
+   async function handleLogin(event){
         event.preventDefault();
-        if(loginData.email==""){
+        if(loginData.email == ""){
             alert("Please enter email...");
             return;
         }
 
-        if(loginData.password==""){
+        if(loginData.password == ""){
             alert("Please enter password...");
             return;
         }
+        try {
+            const checkUser = await axios.post("http://localhost:8080/user/login",loginData);
+           console.log(checkUser)
+           localStorage.setItem("follow-along-auth-token-user-name-id",JSON.stringify({token:checkUser.data.token,name:checkUser.data.name,id:checkUser.data.id}))
+            alert("You sucessfully loged in");
+        } catch (error) {
+            console.log(error);
+            alert("Someting went wrong while logging in");
+        }
 
-        alert("You are successfully logged in");
+
+        
     }
+
   return (
     <div>
-      <form onSubmit={handleLogin}>
-        <label htmlFor="">Email</label>
-        <input type="email" value={loginData.email} name='email' onChange={handleInput} placeholder='Email...'/>
-        <label>password</label>
-        <input type="password" value={loginData.password} name="password" onChange={handleInput} placeholder='password...'/>
-        <input type="submit"/>
-      </form>
+        <form onSubmit={handleLogin} className={styles.formbox} >
+            <label htmlFor="">Email</label>
+            <input type="email" value={loginData.email} name='email' onChange={handleInput} placeholder='Email...' />
+            <label>password</label>
+            <input type="password" value={loginData.password} name="password" onChange={handleInput} placeholder='password...' />
+            <input type="submit" />
+        </form>
     </div>
   )
 }

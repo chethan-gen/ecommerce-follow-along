@@ -1,16 +1,17 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import styles from "./navbar.module.css"
-
+import styles from "./navbar.module.css";
 const Navbar = () => {
     const navigate = useNavigate();
   return (
-    <div className={styles.navbar}>
+    <div
+    className={styles.navbar}
+    >
         <div
-            onClick={()=>{
-                navigate("/");
-
-            }}>
+        onClick={()=>{
+            navigate("/");
+        }}
+        >
             <h1>Home</h1>
         </div>
         <div>
@@ -20,18 +21,17 @@ const Navbar = () => {
         </div>
         <div>
         <div
-            onClick={()=>{
-                navigate("/login");
-            }}
-             >Login</div>
+        onClick={()=>{
+            navigate("/login");
+        }}
+        >Login</div>
         <div
         onClick={()=>{
-            navigate("/signup")
-        }}>
-            Signup</div>
-
+            navigate("/signup");
+        }}
+        >Signup</div>
         </div>
-       
+        
     </div>
   )
 }
