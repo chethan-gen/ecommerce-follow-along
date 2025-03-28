@@ -83,3 +83,7 @@ Completed foundation for your E-Commerce Application.
 * Created Product Delete
 * Created Product Delete Endpoint for Updating products.
 * Created form for Deleting product in frontend.
+
+# Milestone 15:
+* created **Navbar**
+* created Navigation Bar for navigating between pages.

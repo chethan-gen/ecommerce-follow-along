@@ -18,12 +18,13 @@ const cors = require("cors");
 
 app.use(cors());
 
-
 const PORT = process.env.PORT || 8080;
 
 const useRouter = require("./controller/userRouter");
 
 const productRouter = require("./controller/productRouter");
+
+const allProductRouter = require("./controller/allProducts");
 
 
 app.get("/",(req,res)=>{
@@ -59,9 +60,11 @@ app.use("/product",async (req, res, next) => {
     }
 },productRouter);
 
+app.use("/allproducts",allProductRouter);
+
 app.listen(PORT,async ()=>{
     try {
-       await mongoose.connect(process.env.MONGODB_URL,{
+       await mongoose.connect(process.env.MONGODB.URL,{
         useNewUrlParser:true,
         useUnifiedTopology:true
        });
