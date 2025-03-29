@@ -87,3 +87,8 @@ Completed foundation for your E-Commerce Application.
 # Milestone 15:
 * created **Navbar**
 * created Navigation Bar for navigating between pages.
+
+# Milestone 16:
+* created **product details page**
+* created product details page for showing product details.
+* Added Add cart button with quantity selection.
