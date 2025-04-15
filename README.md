@@ -105,3 +105,7 @@ Completed foundation for your E-Commerce Application.
 
  # Milestone 19: Backend endpoint for cart item quantity
  * created put request for updating quantity for cart item.
+
+ # Milestone 20: Backend endpoint for UserDetails
+ * created endpoint for userDetails in backend
+ * created user.jsx for userDetails in frontend
