@@ -31,6 +31,11 @@ const Navbar = () => {
         }}
         >Signup</div>
         </div>
+        <div>
+             <div
+             onClick={()=>navigate("/cart")}
+             >Cart</div>
+         </div>
         
     </div>
   )

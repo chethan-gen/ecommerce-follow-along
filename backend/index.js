@@ -75,6 +75,7 @@ app.use("/cart",
             
             const decoded = jwt.verify(token, process.env.JWT_PASSWORD);
             const user = await userModel.findById(decoded.id);
+            console.log("cart")
             
             if (!user && user.id) {
                 return res.status(404).json({ message: "Please signup" });
