@@ -92,3 +92,8 @@ Completed foundation for your E-Commerce Application.
 * created **product details page**
 * created product details page for showing product details.
 * Added Add cart button with quantity selection.
+
+
+ # Milestone 17:  CRUD for cart** 
+ * Create endpoints in backend ***CRUD*** for handling cart.
+ * Handaled quantity for product in cart.

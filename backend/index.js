@@ -26,6 +26,8 @@ const productRouter = require("./controller/productRouter");
 
 const allProductRouter = require("./controller/allProducts");
 
+const cartRouter = require("./controller/cartProducts");
+
 
 app.get("/",(req,res)=>{
     try {
@@ -60,11 +62,39 @@ app.use("/product",async (req, res, next) => {
     }
 },productRouter);
 
+
+
+app.use("/cart",
+    async (req, res, next) => {
+        try {
+            const token = req.header("Authorization");
+            console.log(token)
+            if (!token) {
+                return res.status(401).json({ message: "Please login" });
+            }
+            
+            const decoded = jwt.verify(token, process.env.JWT_PASSWORD);
+            const user = await userModel.findById(decoded.id);
+            
+            if (!user && user.id) {
+                return res.status(404).json({ message: "Please signup" });
+            }
+            console.log(user.id);
+            req.userId = user.id; 
+            next();
+        } catch (error) {
+            console.log(error)
+            return res.status(400).json({ message: "Invalid Token", error });
+        }
+    } 
+    ,cartRouter);
+
+
 app.use("/allproducts",allProductRouter);
 
 app.listen(PORT,async ()=>{
     try {
-       await mongoose.connect(process.env.MONGODB.URL,{
+       await mongoose.connect(process.env.MONGODB_URL,{
         useNewUrlParser:true,
         useUnifiedTopology:true
        });
