@@ -109,3 +109,7 @@ Completed foundation for your E-Commerce Application.
  # Milestone 20: Backend endpoint for UserDetails
  * created endpoint for userDetails in backend
  * created user.jsx for userDetails in frontend
+
+ # Milestone 20: Backend endpoint for UserDetails
+ * created endpoint for userDetails in backend
+ * created User.jsx for userDetails in frontend.
