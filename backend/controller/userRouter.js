@@ -1,4 +1,3 @@
-
 const express = require("express");
 const userModel = require("../models/userModel");
 const bcrypt = require("bcryptjs");
@@ -85,5 +84,6 @@ userRouter.post("/login", async (req, res) => {
         return res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
 
 module.exports = userRouter;
